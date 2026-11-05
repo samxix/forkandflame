@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-cream font-sans text-charcoal antialiased;
+}
+
+::selection {
+  background-color: #c76b43;
+  color: #f8f5ef;
+}
+
+/* Slim scrollbar for the cart drawer / scrollable panels */
+.nice-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #eae3d8 transparent;
+}
+.nice-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.nice-scroll::-webkit-scrollbar-thumb {
+  background: #eae3d8;
+  border-radius: 9999px;
+}
+.nice-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-forest px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-cream shadow-lg shadow-forest/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-forestLight hover:shadow-xl hover:shadow-forest/30;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-burnt px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-cream shadow-lg shadow-burnt/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-burntDark hover:shadow-xl hover:shadow-burnt/40;
+  }
+
+  .btn-outline-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-cream/50 px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-cream transition-all duration-300 hover:-translate-y-0.5 hover:bg-cream hover:text-forest;
+  }
+
+  .field {
+    @apply w-full rounded-xl border border-beige bg-white px-4 py-3 text-sm text-charcoal outline-none transition placeholder:text-charcoal/40 focus:border-forest focus:ring-2 focus:ring-forest/20;
+  }
+
+  .field-error {
+    @apply border-red-400 focus:border-red-400 focus:ring-red-200;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.3em] text-burnt;
+  }
+}
